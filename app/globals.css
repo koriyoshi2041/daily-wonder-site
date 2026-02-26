@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%; /* 接近白色的背景 */
+    --foreground: 0 0% 15%; /* 深灰色文字 */
+    --font-sans: "Inter", sans-serif;
+    --font-serif: "Lora", serif;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-serif);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+  
+  /* 为 Markdown 内容提供基础样式 */
+  .prose {
+    @apply text-lg leading-relaxed;
+  }
+  .prose p {
+    @apply mb-4;
+  }
+  .prose h2 {
+     @apply text-3xl font-bold mt-12 mb-4;
+  }
+  .prose h3 {
+     @apply text-2xl font-bold mt-8 mb-4;
+  }
+  .prose strong {
+    @apply font-semibold;
+  }
+  .prose blockquote {
+    @apply border-l-4 border-zinc-300 pl-4 italic text-zinc-600;
+  }
+  .prose ul {
+    @apply list-disc list-inside mb-4;
+  }
+  .prose hr {
+    @apply my-8 border-zinc-200;
+  }
+}
