@@ -26,7 +26,7 @@ export default async function HomePage() {
       <header className="mb-8">
         <p className="text-sm text-zinc-500">{latestWonder.date}</p>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mt-2">
-          Daily Wonder
+          {latestWonder.title || 'Daily Wonder'}
         </h1>
       </header>
       
