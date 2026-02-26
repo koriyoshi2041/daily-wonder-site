@@ -4,8 +4,8 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-// 关键：正确解析用户主目录
-const wondersDirectory = path.join(process.env.HOME || '', 'clawd/memory/daily-wonders');
+// 使用项目内的 content 目录，兼容 Vercel 部署
+const wondersDirectory = path.join(process.cwd(), 'content/wonders');
 
 export interface Wonder {
   slug: string;
